@@ -5,11 +5,10 @@ RUN apk add --no-cache krb5-dev bash && \
 
 WORKDIR app
 
-ADD . .
+ONBUILD ADD . .
+ONBUILD RUN \
+  yarn install --ignore-optional && \
+  yarn build
 
-RUN yarn install --ignore-optional
-
-ENV PORT 3000
 EXPOSE 3000
-
 CMD [ "yarn", "start" ]
