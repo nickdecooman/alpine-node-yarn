@@ -1,14 +1,11 @@
-FROM node:7.2.0-alpine
-
-RUN apk add --no-cache krb5-dev bash && \
-  npm install --global yarn
+FROM node:7.10.0-alpine
 
 WORKDIR app
 
-ONBUILD ADD . .
-ONBUILD RUN \
-  yarn install --ignore-optional && \
-  yarn build
+ONBUILD ARG NODE_ENV
+ONBUILD ENV NODE_ENV $NODE_ENV
 
-EXPOSE 3000
-CMD [ "yarn", "start" ]
+ONBUILD COPY . .
+ONBUILD RUN ./build.sh
+
+CMD [ "./up.sh" ]
