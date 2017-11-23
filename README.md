@@ -5,7 +5,8 @@ Available from the the Docker Hub regsitry as [nickdecooman/alpine-node-yarn](ht
 
 ## Versions
 
-- `latest`, `8.1.2-onbuild` - 63.7 MB
+- `latest`, `9.2.0-onbuild` - 67.5 MB
+- `8.1.2-onbuild` - 63.7 MB
 - `7.10.0-onbuild` - 59.1 MB
 - `7.2.0-onbuild` – 96.8 MB
 
